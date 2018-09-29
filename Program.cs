@@ -6,7 +6,7 @@ namespace Workshop2Design
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MemberRegistryController mrc = new MemberRegistryController();
         }
     }
 }
