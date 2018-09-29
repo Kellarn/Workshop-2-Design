@@ -5,8 +5,9 @@ namespace Workshop2Design
     class MemberRegistryController
     {
         private MainView mainView;
-
         private CreateMemberView createMemberView;
+        private Member member;
+        private CreateMember createMember;
         private int menuChoice;
         public MemberRegistryController()
         {
@@ -15,8 +16,6 @@ namespace Workshop2Design
 
         private void RunApplication()
         {
-            try
-            {
                 mainView = new MainView();
                 menuChoice = mainView.MenuChoice;
 
@@ -24,6 +23,9 @@ namespace Workshop2Design
                 {
                     case 1:
                     createMemberView = new CreateMemberView();
+                    createMember = new CreateMember();
+                    member = new Member(createMemberView.Name, createMemberView.PersonalNumber);
+                    createMember.addNewMember(member.Name, member.PersonalNumber);
                     break;
 
                     default:
@@ -31,14 +33,6 @@ namespace Workshop2Design
                     break;
                 }
                 // Console.WriteLine(menuChoice);
-            }
-            catch (Exception ex)
-            {
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.Error.WriteLine("\n" + ex.Message);
-                
-            }
             /* char yesOrNo = mainView.ContinueOnKeyPressed();
             if(yesOrNo == 'Y' || yesOrNo == 'y')
             {
