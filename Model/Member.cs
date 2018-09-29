@@ -14,6 +14,7 @@ namespace Workshop2Design
         private string personalNumber;
         private int uniqueId;
 
+
         public string Name
         {
             get { return name; }
@@ -26,17 +27,23 @@ namespace Workshop2Design
             set { personalNumber = value; }
         }
 
+        public int UniqueId
+        {
+            get { return uniqueId; }
+            set { uniqueId = value; }
+        }
+
         public Member()
         {
             name = "";
             personalNumber = "";
-            uniqueId = 0;
+            uniqueId = 1;
         }
-
-        public Member(string name, string personalNumber)
+        public Member(string name, string personalNumber, int uniqueId)
         {
             Name = name;
             PersonalNumber = personalNumber;
+            UniqueId = uniqueId;
         }
     }
 }

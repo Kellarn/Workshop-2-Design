@@ -6,7 +6,6 @@ namespace Workshop2Design
     {
         private MainView mainView;
         private CreateMemberView createMemberView;
-        private Member member;
         private CreateMember createMember;
         private int menuChoice;
         public MemberRegistryController()
@@ -16,32 +15,29 @@ namespace Workshop2Design
 
         private void RunApplication()
         {
-                mainView = new MainView();
-                menuChoice = mainView.MenuChoice;
+            mainView = new MainView();
+            createMember = new CreateMember();
+            menuChoice = mainView.MenuChoice;
 
-                switch(menuChoice)
+            while (menuChoice != 0)
+            {
+                mainView.renderMainUI();
+                menuChoice = mainView.MenuChoice;
+                switch (menuChoice)
                 {
                     case 1:
-                    createMemberView = new CreateMemberView();
-                    createMember = new CreateMember();
-                    member = new Member(createMemberView.Name, createMemberView.PersonalNumber);
-                    createMember.addNewMember(member.Name, member.PersonalNumber);
-                    break;
+                        createMemberView = new CreateMemberView();
+                        createMember.addNewMember(createMemberView.Name, createMemberView.PersonalNumber);
+                        break;
 
+                    case 2:
+                        break;
                     default:
-                    Console.WriteLine("Not yet implemented");
-                    break;
+                        createMember.writeToJSON();
+                        mainView.ExitMessage();
+                        break;
                 }
-                // Console.WriteLine(menuChoice);
-            /* char yesOrNo = mainView.ContinueOnKeyPressed();
-            if(yesOrNo == 'Y' || yesOrNo == 'y')
-            {
-                RunApplication();
             }
-            else
-            {
-
-            }*/
         }
     }
 }

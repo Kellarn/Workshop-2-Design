@@ -4,7 +4,7 @@ namespace Workshop2Design
 {
     class MainView
     {
-        private int menuChoice = 0;
+        private int menuChoice = 1;
 
         public int MenuChoice
         {
@@ -20,9 +20,9 @@ namespace Workshop2Design
 
         public MainView()
         {
-            renderMainUI();
+            // renderMainUI();
         }
-        private void renderMainUI()
+        public void renderMainUI()
         {
             Console.BackgroundColor = ConsoleColor.DarkCyan;
             Console.ForegroundColor = ConsoleColor.White;
@@ -30,6 +30,8 @@ namespace Workshop2Design
             Console.WriteLine(" ║     The Jolly Pirates Member System     ║ ");
             Console.WriteLine(" ╚═════════════════════════════════════════╝ ");
             Console.WriteLine(" 1. Add a new member                         ");
+            Console.WriteLine(" 2. List all members                         ");
+            Console.WriteLine(" 0. Exit application                         ");
             Console.BackgroundColor = ConsoleColor.Black;
             readMenuChoice();
         }
@@ -40,7 +42,7 @@ namespace Workshop2Design
             MenuChoice = int.Parse(Console.ReadLine());
         }
 
-        /* public char ContinueOnKeyPressed()
+        public char ContinueOnKeyPressed()
         {
             char yesOrNo;
             Console.ForegroundColor = ConsoleColor.White;
@@ -52,6 +54,9 @@ namespace Workshop2Design
             Console.Clear();
             Console.CursorVisible = true;
             return yesOrNo;
-        }*/
+        }
+        public void ExitMessage(){
+            Console.WriteLine("Bye Bye!");
+        }
     }
 }

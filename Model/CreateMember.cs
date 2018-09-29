@@ -11,20 +11,35 @@ namespace Workshop2Design
     class CreateMember
     {
         private string jsonFile = @"users.json";
-        private List<Member> _member = new List<Member>();
+        private int currentIdNumber = 1;
+        private List<Member> _members = new List<Member>();
 
+        public CreateMember()
+        {
+            readJSONAndPopulateList();
+            findAndUpdateUniqueId();
+        }
         public void addNewMember(string name, string personalNumber)
         {
+            currentIdNumber += 1;
+            _members.Add(new Member(name, personalNumber, currentIdNumber));
+        }
+        private void findAndUpdateUniqueId()
+        {
+            object lastObject = _members.Last();
+            object lastId = lastObject.GetType().GetProperty("UniqueId").GetValue(lastObject, null);
+            currentIdNumber = (int) lastId;
+        }
+
+        private void readJSONAndPopulateList()
+        {
             string json = File.ReadAllText(jsonFile);
-            _member = JsonConvert.DeserializeObject<List<Member>>(json);
-            _member.Add(new Member(name, personalNumber));
-            File.WriteAllText(@jsonFile, JsonConvert.SerializeObject(_member, Formatting.Indented));
-            /* var list = JsonConvert.DeserializeObject<List<Member>>(jsonFile);
-            list.Add(new Member(name, personalNumber));
-            var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
-            Console.WriteLine(convertedJson);
-            newMember = "{'Name:':" + Name + ", 'PersonalNumber:'" + PersonalNumber + "'}"; */
-            
+            _members = JsonConvert.DeserializeObject<List<Member>>(json);
+        }
+
+        public void writeToJSON()
+        {
+            File.WriteAllText(@jsonFile, JsonConvert.SerializeObject(_members, Formatting.Indented));
         }
     }
 }
