@@ -14,6 +14,8 @@ namespace Workshop2Design
 
         private string length;
 
+        private int boatID;
+
         public BoatType BoatType
         {
             get { return boatType; }
@@ -25,14 +27,19 @@ namespace Workshop2Design
             get { return length; }
             set { length = value; }
         }
-
+        public int BoatID
+        {
+            get { return boatID; }
+            set { boatID = value; }
+        }
         public Boat()
         {
         }
-        public Boat(BoatType boatType, string length)
+        public Boat(BoatType boatType, string length, int boatID)
         {
             BoatType = boatType;
             Length = length;
+            BoatID = boatID;
         }
     }
 }

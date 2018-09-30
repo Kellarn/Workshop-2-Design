@@ -47,11 +47,19 @@ namespace Workshop2Design
                             Member selectedMember = listMembersView.listAndReturnSingelMember(crudMember.Members);
                             actionOnMemberView = new ActionOnMemberView();
                             // actionOnMemberSwitch(actionOnMemberView.ActionChoice, selectedMember);
+                            boatView = new BoatView();
                             if (actionOnMemberView.ActionChoice == 1)
                             {
-                                boatView = new BoatView();
-                                selectedMember.Boats.Add(new Boat(boatView.BoatType, boatView.Length));
+                                boatView.GetBoatInformation();
+                                int boatCount = selectedMember.Boats.Count;
+                                selectedMember.Boats.Add(new Boat(boatView.BoatType, boatView.Length, boatCount + 1));
+
+                                //Should this be made into a method in the member class to increase number of boats?
                                 selectedMember.NumberOfBoats += 1;
+                            } 
+                            else if(actionOnMemberView.ActionChoice == 2)
+                            {
+                                boatView.whichBoatToChange(selectedMember.Boats);
                             }
                             break;
                         }
@@ -63,7 +71,7 @@ namespace Workshop2Design
             }
         }
 
-        private void actionOnMemberSwitch(int choice, Member selectedMember)
+        /*private void actionOnMemberSwitch(int choice, Member selectedMember)
         {
             while (choice != 0)
             {
@@ -91,6 +99,6 @@ namespace Workshop2Design
                         break;
                 }
             }
-        }
+        }*/
     }
 }

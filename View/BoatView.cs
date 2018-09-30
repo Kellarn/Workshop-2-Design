@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Workshop2Design
 {
@@ -9,7 +10,7 @@ namespace Workshop2Design
         private int boatChoice;
         public BoatView()
         {
-            GetBoatInformation();
+            // GetBoatInformation();
         }
 
         public BoatType BoatType
@@ -28,7 +29,7 @@ namespace Workshop2Design
             set { boatChoice = value; }
         }
 
-        private void GetBoatInformation()
+        public void GetBoatInformation()
         {
             Console.WriteLine("Please enter the type of boat");
             var values = Enum.GetValues(typeof(BoatType));
@@ -41,6 +42,17 @@ namespace Workshop2Design
 
             Console.WriteLine("Please enter a the length of the boat:");
             Length = Console.ReadLine();
+        }
+
+        public void whichBoatToChange(List<Boat> boats)
+        {
+            Console.WriteLine("Which boat do you want to update?:");
+            foreach(Boat boat in boats)
+            {
+                Console.WriteLine("{0}. {1}", boat.BoatID, boat.BoatType);
+                currentBoatIndex++;
+            }
+            BoatChoice = int.Parse(Console.ReadLine());
         }
     }
 }
