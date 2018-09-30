@@ -1,17 +1,17 @@
 using System;
-using Newtonsoft.Json; 
-using Newtonsoft.Json.Linq; 
-using System.Collections.Generic; 
-using System.IO; 
-using System.Linq; 
-using System.Text; 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 
 namespace Workshop2Design
 {
     class CRUDMember
     {
         private string jsonFile = @"users.json";
-        private int currentIdNumber = 1;
+        private int currentIdNumber = 0;
         private List<Member> members = new List<Member>();
 
         public List<Member> Members
@@ -31,9 +31,12 @@ namespace Workshop2Design
         }
         private void findAndUpdateUniqueId()
         {
-            object lastObject = members.Last();
-            object lastId = lastObject.GetType().GetProperty("UniqueId").GetValue(lastObject, null);
-            currentIdNumber = (int) lastId;
+            if (members.Any())
+            {
+                object lastObject = members.Last();
+                object lastId = lastObject.GetType().GetProperty("UniqueId").GetValue(lastObject, null);
+                currentIdNumber = (int)lastId;
+            }
         }
 
         private void readJSONAndPopulateList()

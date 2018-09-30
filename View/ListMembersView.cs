@@ -44,6 +44,7 @@ namespace Workshop2Design
             {
                 foreach (Member member in members)
                 {
+                     // TODO Perhaps add a toString render method to the member class for cleaner output?
                     Console.WriteLine("Name: {0}", member.Name);
                     Console.WriteLine("ID: {0}", member.UniqueId);
                 }
@@ -52,6 +53,8 @@ namespace Workshop2Design
             {
                 foreach (Member member in members)
                 {
+
+                    // TODO Perhaps add a toString render method to the member class for cleaner output?
                     Console.WriteLine("\n***********************");
                     Console.WriteLine("* Name: {0}", member.Name);
                     Console.WriteLine("* Personal number: {0}", member.PersonalNumber);

@@ -13,7 +13,8 @@ namespace Workshop2Design
         private string name;
         private string personalNumber;
         private int uniqueId;
-        private List<Boat> Boats = new List<Boat>();
+        private int numberOfBoats;
+        private List<Boat> boats = new List<Boat>();
 
 
         public string Name
@@ -34,6 +35,15 @@ namespace Workshop2Design
             set { uniqueId = value; }
         }
 
+        public int NumberOfBoats
+        {
+            get { return numberOfBoats; }
+            set { numberOfBoats = value; }
+        }
+        public List<Boat> Boats
+        {
+            get { return boats; }
+        }
         public Member()
         {
             name = "";
@@ -45,6 +55,11 @@ namespace Workshop2Design
             Name = name;
             PersonalNumber = personalNumber;
             UniqueId = uniqueId;
+            NumberOfBoats = Boats.Count;
+        }
+
+        public void addBoat(Boat boat){
+            boats.Add(boat);
         }
     }
 }

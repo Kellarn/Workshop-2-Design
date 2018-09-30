@@ -1,52 +1,9 @@
 [
   {
-    "Name": "Sebbe",
-    "PersonalNumber": "32131",
-    "UniqueId": 1
-  },
-  {
-    "Name": "Sebastian",
-    "PersonalNumber": "12312",
-    "UniqueId": 2
-  },
-  {
-    "Name": "AndersK",
-    "PersonalNumber": "95493",
-    "UniqueId": 3
-  },
-  {
-    "Name": "Olof Palme",
-    "PersonalNumber": "123199",
-    "UniqueId": 4
-  },
-  {
-    "Name": "Hurre Burre",
-    "PersonalNumber": "7422",
-    "UniqueId": 5
-  },
-  {
-    "Name": "Anders Följe",
-    "PersonalNumber": "531",
-    "UniqueId": 6
-  },
-  {
-    "Name": "Birger Jarl",
-    "PersonalNumber": "24342",
-    "UniqueId": 7
-  },
-  {
-    "Name": "Halvar",
-    "PersonalNumber": "421",
-    "UniqueId": 8
-  },
-  {
-    "Name": "Olle231",
-    "PersonalNumber": "4232",
-    "UniqueId": 9
-  },
-  {
-    "Name": "asdasdas",
-    "PersonalNumber": "4241",
-    "UniqueId": 10
+    "Name": "Sebbe KK",
+    "PersonalNumber": "8421",
+    "UniqueId": 1,
+    "NumberOfBoats": 0,
+    "Boats": []
   }
 ]

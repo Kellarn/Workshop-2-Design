@@ -28,8 +28,6 @@ namespace Workshop2Design
 
         public Boat()
         {
-            boatType = "";
-            length = "";
         }
         public Boat(BoatType boatType, string length)
         {
