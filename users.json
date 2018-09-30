@@ -4,6 +4,27 @@
     "PersonalNumber": "8421",
     "UniqueId": 1,
     "NumberOfBoats": 0,
-    "Boats": []
+    "Boats": [
+      {
+        "BoatType": 3,
+        "Length": "150 cm"
+      },
+      {
+        "BoatType": 2,
+        "Length": "12312 cm"
+      }
+    ]
+  },
+  {
+    "Name": "Håkan Andersson",
+    "PersonalNumber": "2431",
+    "UniqueId": 2,
+    "NumberOfBoats": 1,
+    "Boats": [
+      {
+        "BoatType": 1,
+        "Length": "3.68 m"
+      }
+    ]
   }
 ]

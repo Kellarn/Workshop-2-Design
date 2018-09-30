@@ -8,7 +8,10 @@ namespace Workshop2Design
         private CreateMemberView createMemberView;
         private ListMembersView listMembersView;
         private CRUDMember crudMember;
+        private ActionOnMemberView actionOnMemberView;
+        private BoatView boatView;
         private int menuChoice;
+        private int memberChoice;
         public MemberRegistryController()
         {
             RunApplication();
@@ -34,10 +37,57 @@ namespace Workshop2Design
                     case 2:
                         listMembersView = new ListMembersView();
                         listMembersView.renderList(crudMember.Members);
-                        break;
+                        memberChoice = listMembersView.MemberChoice;
+                        if (memberChoice == 0)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Member selectedMember = listMembersView.listAndReturnSingelMember(crudMember.Members);
+                            actionOnMemberView = new ActionOnMemberView();
+                            // actionOnMemberSwitch(actionOnMemberView.ActionChoice, selectedMember);
+                            if (actionOnMemberView.ActionChoice == 1)
+                            {
+                                boatView = new BoatView();
+                                selectedMember.Boats.Add(new Boat(boatView.BoatType, boatView.Length));
+                                selectedMember.NumberOfBoats += 1;
+                            }
+                            break;
+                        }
                     default:
                         crudMember.writeToJSON();
                         mainView.ExitMessage();
+                        break;
+                }
+            }
+        }
+
+        private void actionOnMemberSwitch(int choice, Member selectedMember)
+        {
+            while (choice != 0)
+            {
+                switch (choice)
+                {
+                    case 1:
+                        boatView = new BoatView();
+                        selectedMember.Boats.Add(new Boat(boatView.BoatType, boatView.Length));
+                        selectedMember.NumberOfBoats += 1;
+                        break;
+
+                    case 2:
+                        break;
+
+                    case 3:
+                        break;
+
+                    case 4:
+                        break;
+
+                    case 5:
+                        break;
+
+                    default:
                         break;
                 }
             }

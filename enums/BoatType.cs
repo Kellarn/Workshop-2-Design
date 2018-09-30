@@ -8,9 +8,9 @@ namespace Workshop2Design
     /// </summery>
     public enum BoatType
     {
-        Sailboat,
-        Motorsailer,
-        kayakCanoe,
-        Other
+        Sailboat = 1,
+        Motorsailer = 2,
+        kayakCanoe = 3,
+        Other = 4
     }
 }
