@@ -8,13 +8,18 @@ using System.Text;
 
 namespace Workshop2Design
 {
-    class CreateMember
+    class CRUDMember
     {
         private string jsonFile = @"users.json";
         private int currentIdNumber = 1;
-        private List<Member> _members = new List<Member>();
+        private List<Member> members = new List<Member>();
 
-        public CreateMember()
+        public List<Member> Members
+        {
+            get { return members; }
+        }
+
+        public CRUDMember()
         {
             readJSONAndPopulateList();
             findAndUpdateUniqueId();
@@ -22,11 +27,11 @@ namespace Workshop2Design
         public void addNewMember(string name, string personalNumber)
         {
             currentIdNumber += 1;
-            _members.Add(new Member(name, personalNumber, currentIdNumber));
+            members.Add(new Member(name, personalNumber, currentIdNumber));
         }
         private void findAndUpdateUniqueId()
         {
-            object lastObject = _members.Last();
+            object lastObject = members.Last();
             object lastId = lastObject.GetType().GetProperty("UniqueId").GetValue(lastObject, null);
             currentIdNumber = (int) lastId;
         }
@@ -34,12 +39,12 @@ namespace Workshop2Design
         private void readJSONAndPopulateList()
         {
             string json = File.ReadAllText(jsonFile);
-            _members = JsonConvert.DeserializeObject<List<Member>>(json);
+            members = JsonConvert.DeserializeObject<List<Member>>(json);
         }
 
         public void writeToJSON()
         {
-            File.WriteAllText(@jsonFile, JsonConvert.SerializeObject(_members, Formatting.Indented));
+            File.WriteAllText(@jsonFile, JsonConvert.SerializeObject(members, Formatting.Indented));
         }
     }
 }

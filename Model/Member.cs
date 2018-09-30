@@ -13,6 +13,7 @@ namespace Workshop2Design
         private string name;
         private string personalNumber;
         private int uniqueId;
+        private List<Boat> Boats = new List<Boat>();
 
 
         public string Name

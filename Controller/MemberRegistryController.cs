@@ -6,7 +6,8 @@ namespace Workshop2Design
     {
         private MainView mainView;
         private CreateMemberView createMemberView;
-        private CreateMember createMember;
+        private ListMembersView listMembersView;
+        private CRUDMember crudMember;
         private int menuChoice;
         public MemberRegistryController()
         {
@@ -16,7 +17,7 @@ namespace Workshop2Design
         private void RunApplication()
         {
             mainView = new MainView();
-            createMember = new CreateMember();
+            crudMember = new CRUDMember();
             menuChoice = mainView.MenuChoice;
 
             while (menuChoice != 0)
@@ -27,13 +28,15 @@ namespace Workshop2Design
                 {
                     case 1:
                         createMemberView = new CreateMemberView();
-                        createMember.addNewMember(createMemberView.Name, createMemberView.PersonalNumber);
+                        crudMember.addNewMember(createMemberView.Name, createMemberView.PersonalNumber);
                         break;
 
                     case 2:
+                        listMembersView = new ListMembersView();
+                        listMembersView.renderList(crudMember.Members);
                         break;
                     default:
-                        createMember.writeToJSON();
+                        crudMember.writeToJSON();
                         mainView.ExitMessage();
                         break;
                 }
