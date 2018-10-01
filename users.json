@@ -1,28 +1,5 @@
 [
   {
-    "Name": "Sebbe KK",
-    "PersonalNumber": "8421",
-    "UniqueId": 1,
-    "NumberOfBoats": 1,
-    "Boats": [
-      {
-        "BoatType": 3,
-        "Length": "150 cm",
-        "BoatID": 0
-      },
-      {
-        "BoatType": 2,
-        "Length": "12312 cm",
-        "BoatID": 0
-      },
-      {
-        "BoatType": 2,
-        "Length": "231 cm",
-        "BoatID": 3
-      }
-    ]
-  },
-  {
     "Name": "Håkan Andersson",
     "PersonalNumber": "2431",
     "UniqueId": 2,
@@ -34,5 +11,19 @@
         "BoatID": 0
       }
     ]
+  },
+  {
+    "Name": "Anders Andersson",
+    "PersonalNumber": "5412",
+    "UniqueId": 3,
+    "NumberOfBoats": 0,
+    "Boats": []
+  },
+  {
+    "Name": "Joel Stenberg",
+    "PersonalNumber": "2312",
+    "UniqueId": 4,
+    "NumberOfBoats": 0,
+    "Boats": []
   }
 ]

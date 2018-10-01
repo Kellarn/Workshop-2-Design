@@ -71,5 +71,13 @@ namespace Workshop2Design
                 boat.Length = length;
             }
         }
+        public void deleteBoat(int boatChoice)
+        {
+            Boat boat = boats.FirstOrDefault(x => x.BoatID == boatChoice);
+            if(boat != null)
+            {
+                boats.Remove(boat);
+            }
+        }
     }
 }

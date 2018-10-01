@@ -62,7 +62,11 @@ namespace Workshop2Design
                                 boatView.whichBoatToChange(selectedMember.Boats);
                                 boatView.GetBoatInformation();
                                 selectedMember.selectAndUpdateBoat(boatView.BoatChoice, boatView.BoatType, boatView.Length);
-                                // int boatCount = selectedMember.Boats.Count;
+                            }
+                            else if(actionOnMemberView.ActionChoice == 3)
+                            {
+                                boatView.whichBoatToChange(selectedMember.Boats);
+                                selectedMember.deleteBoat(boatView.BoatChoice);
                             }
                             break;
                         }
