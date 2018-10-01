@@ -64,8 +64,8 @@ namespace Workshop2Design
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\n" + ex.Message);
             Console.WriteLine("Press any key to try again!");
-            Console.ReadLine();
             Console.ResetColor();
+            Console.ReadLine();
             Console.Clear();
         }
     }

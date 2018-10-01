@@ -1,29 +1,46 @@
 [
   {
-    "Name": "Håkan Andersberg",
-    "PersonalNumber": "2312",
-    "UniqueId": 2,
-    "NumberOfBoats": 1,
+    "Name": "Johan Jonsson",
+    "PersonalNumber": "5432",
+    "UniqueId": 1,
+    "NumberOfBoats": 2,
     "Boats": [
       {
-        "BoatType": 3,
-        "Length": "123123 mm",
-        "BoatID": 0
+        "BoatType": 2,
+        "Length": "4.2 m",
+        "BoatID": 1
+      },
+      {
+        "BoatType": 2,
+        "Length": "3.1 m",
+        "BoatID": 2
       }
     ]
   },
   {
     "Name": "Anders Andersson",
-    "PersonalNumber": "5412",
-    "UniqueId": 3,
-    "NumberOfBoats": 0,
-    "Boats": []
+    "PersonalNumber": "3412",
+    "UniqueId": 2,
+    "NumberOfBoats": 1,
+    "Boats": [
+      {
+        "BoatType": 3,
+        "Length": "1.99 m",
+        "BoatID": 1
+      }
+    ]
   },
   {
-    "Name": "Joel Stenberg",
-    "PersonalNumber": "2312",
-    "UniqueId": 4,
-    "NumberOfBoats": 0,
-    "Boats": []
+    "Name": "Erik Stenberg",
+    "PersonalNumber": "1992",
+    "UniqueId": 3,
+    "NumberOfBoats": 1,
+    "Boats": [
+      {
+        "BoatType": 4,
+        "Length": "6.1 m",
+        "BoatID": 1
+      }
+    ]
   }
 ]

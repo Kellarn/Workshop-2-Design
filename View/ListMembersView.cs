@@ -20,7 +20,7 @@ namespace Workshop2Design
             get { return listChoice; }
             set
             {
-                if (value <= 0 || value > 2)
+                if (value > 2)
                 {
                     throw new ArgumentOutOfRangeException("Your choice needs to be 1 or 2");
                 }
@@ -40,7 +40,7 @@ namespace Workshop2Design
             Console.WriteLine("Which list do you want to view?");
             Console.WriteLine("1. Simple list.");
             Console.WriteLine("2. Detailed list.");
-            listChoice = int.Parse(Console.ReadLine());
+            ListChoice = int.Parse(Console.ReadLine());
 
         }
 
