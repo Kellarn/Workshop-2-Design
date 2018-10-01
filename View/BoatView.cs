@@ -8,11 +8,16 @@ namespace Workshop2Design
         private BoatType boatType;
         private string length;
         private int boatChoice;
+        private int boatTypeChoice;
         public BoatView()
         {
             // GetBoatInformation();
         }
-
+        public int BoatTypeChoice
+        {
+            get { return boatTypeChoice; }
+            set { boatTypeChoice = value; }
+        }
         public BoatType BoatType
         {
             get { return boatType; }
@@ -37,8 +42,8 @@ namespace Workshop2Design
             {
                 Console.WriteLine("{0}. {1}", (int)boatType, boatType);
             }
-            BoatChoice = int.Parse(Console.ReadLine());
-            BoatType = (BoatType)BoatChoice;
+            BoatTypeChoice = int.Parse(Console.ReadLine());
+            BoatType = (BoatType)BoatTypeChoice;
 
             Console.WriteLine("Please enter a the length of the boat:");
             Length = Console.ReadLine();
@@ -50,7 +55,6 @@ namespace Workshop2Design
             foreach(Boat boat in boats)
             {
                 Console.WriteLine("{0}. {1}", boat.BoatID, boat.BoatType);
-                currentBoatIndex++;
             }
             BoatChoice = int.Parse(Console.ReadLine());
         }

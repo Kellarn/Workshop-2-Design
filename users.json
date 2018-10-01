@@ -29,8 +29,8 @@
     "NumberOfBoats": 1,
     "Boats": [
       {
-        "BoatType": 1,
-        "Length": "3.68 m",
+        "BoatType": 3,
+        "Length": "123123 mm",
         "BoatID": 0
       }
     ]

@@ -8,3 +8,13 @@ C:\Users\Sebbe\Documents\Workshop2\Workshop2Design\obj\Debug\netcoreapp2.0\Works
 C:\Users\Sebbe\Documents\Workshop2\Workshop2Design\obj\Debug\netcoreapp2.0\Workshop2Design.AssemblyInfo.cs
 C:\Users\Sebbe\Documents\Workshop2\Workshop2Design\obj\Debug\netcoreapp2.0\Workshop2Design.dll
 C:\Users\Sebbe\Documents\Workshop2\Workshop2Design\obj\Debug\netcoreapp2.0\Workshop2Design.pdb
+C:\Users\Sebbe\Documents\Webbprogrammering\1dv610\Workshop-2-Design\obj\Debug\netcoreapp2.0\Workshop2Design.csproj.CoreCompileInputs.cache
+C:\Users\Sebbe\Documents\Webbprogrammering\1dv610\Workshop-2-Design\obj\Debug\netcoreapp2.0\Workshop2Design.AssemblyInfoInputs.cache
+C:\Users\Sebbe\Documents\Webbprogrammering\1dv610\Workshop-2-Design\obj\Debug\netcoreapp2.0\Workshop2Design.AssemblyInfo.cs
+C:\Users\Sebbe\Documents\Webbprogrammering\1dv610\Workshop-2-Design\obj\Debug\netcoreapp2.0\Workshop2Design.dll
+C:\Users\Sebbe\Documents\Webbprogrammering\1dv610\Workshop-2-Design\obj\Debug\netcoreapp2.0\Workshop2Design.pdb
+C:\Users\Sebbe\Documents\Webbprogrammering\1dv610\Workshop-2-Design\bin\Debug\netcoreapp2.0\Workshop2Design.deps.json
+C:\Users\Sebbe\Documents\Webbprogrammering\1dv610\Workshop-2-Design\bin\Debug\netcoreapp2.0\Workshop2Design.runtimeconfig.json
+C:\Users\Sebbe\Documents\Webbprogrammering\1dv610\Workshop-2-Design\bin\Debug\netcoreapp2.0\Workshop2Design.runtimeconfig.dev.json
+C:\Users\Sebbe\Documents\Webbprogrammering\1dv610\Workshop-2-Design\bin\Debug\netcoreapp2.0\Workshop2Design.dll
+C:\Users\Sebbe\Documents\Webbprogrammering\1dv610\Workshop-2-Design\bin\Debug\netcoreapp2.0\Workshop2Design.pdb

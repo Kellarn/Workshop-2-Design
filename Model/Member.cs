@@ -61,5 +61,15 @@ namespace Workshop2Design
         public void addBoat(Boat boat){
             boats.Add(boat);
         }
+
+        public void selectAndUpdateBoat(int boatChoice, BoatType boatType, string length)
+        {
+            Boat boat = boats.FirstOrDefault(x => x.BoatID == boatChoice);
+            if(boat != null)
+            {
+                boat.BoatType = boatType;
+                boat.Length = length;
+            }
+        }
     }
 }

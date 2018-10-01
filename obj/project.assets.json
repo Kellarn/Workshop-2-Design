@@ -708,11 +708,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sebbe\\Documents\\Workshop2\\Workshop2Design\\Workshop2Design.csproj",
+      "projectUniqueName": "C:\\Users\\Sebbe\\Documents\\Webbprogrammering\\1dv610\\Workshop-2-Design\\Workshop2Design.csproj",
       "projectName": "Workshop2Design",
-      "projectPath": "C:\\Users\\Sebbe\\Documents\\Workshop2\\Workshop2Design\\Workshop2Design.csproj",
+      "projectPath": "C:\\Users\\Sebbe\\Documents\\Webbprogrammering\\1dv610\\Workshop-2-Design\\Workshop2Design.csproj",
       "packagesPath": "C:\\Users\\Sebbe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sebbe\\Documents\\Workshop2\\Workshop2Design\\obj\\",
+      "outputPath": "C:\\Users\\Sebbe\\Documents\\Webbprogrammering\\1dv610\\Workshop-2-Design\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
