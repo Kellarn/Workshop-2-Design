@@ -49,5 +49,23 @@ namespace Workshop2Design
         {
             File.WriteAllText(@jsonFile, JsonConvert.SerializeObject(members, Formatting.Indented));
         }
+
+        public void updateMemberInformation(int memberID, string newName, string newPersonalNumber)
+        {
+            Member member = members.FirstOrDefault(x => x.UniqueId == memberID);
+            if (member != null)
+            {
+                member.Name = newName;
+                member.PersonalNumber = newPersonalNumber;
+            }
+        }
+
+        public void deleteMember(int memberID){
+            Member member = members.FirstOrDefault(x => x.UniqueId == memberID);
+            if(member != null)
+            {
+                members.Remove(member);
+            }
+        }
     }
 }

@@ -10,8 +10,8 @@ namespace Workshop2Design
         {
             get{ return menuChoice; }
             set{ 
-                if(value < 0 || value > 5){
-                    throw new ArgumentOutOfRangeException("Your choice needs to be 1-4");
+                if(value < 0 || value > 2){
+                    throw new ArgumentOutOfRangeException("Your choice needs to be 0-2");
                 } else {
                     menuChoice = value;
                 }
@@ -42,7 +42,7 @@ namespace Workshop2Design
             MenuChoice = int.Parse(Console.ReadLine());
         }
 
-        public char ContinueOnKeyPressed()
+        /* public char ContinueOnKeyPressed()
         {
             char yesOrNo;
             Console.ForegroundColor = ConsoleColor.White;
@@ -54,9 +54,19 @@ namespace Workshop2Design
             Console.Clear();
             Console.CursorVisible = true;
             return yesOrNo;
-        }
+        }*/ 
         public void ExitMessage(){
             Console.WriteLine("Bye Bye!");
+        }
+        public void DisplayError(Exception ex)
+        {
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n" + ex.Message);
+            Console.WriteLine("Press any key to try again!");
+            Console.ReadLine();
+            Console.ResetColor();
+            Console.Clear();
         }
     }
 }

@@ -16,7 +16,16 @@ namespace Workshop2Design
         public int BoatTypeChoice
         {
             get { return boatTypeChoice; }
-            set { boatTypeChoice = value; }
+            set { 
+                if(value > 4)
+                {
+                    throw new ArgumentOutOfRangeException("Your choice needs to be 1-4");
+                }
+                else
+                {
+                    boatTypeChoice = value;
+                }
+            }
         }
         public BoatType BoatType
         {

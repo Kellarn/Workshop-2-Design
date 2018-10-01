@@ -19,63 +19,82 @@ namespace Workshop2Design
 
         private void RunApplication()
         {
-            mainView = new MainView();
-            crudMember = new CRUDMember();
-            menuChoice = mainView.MenuChoice;
-
-            while (menuChoice != 0)
+            try
             {
-                mainView.renderMainUI();
+                mainView = new MainView();
+                crudMember = new CRUDMember();
                 menuChoice = mainView.MenuChoice;
-                switch (menuChoice)
+
+                while (menuChoice != 0)
                 {
-                    case 1:
-                        createMemberView = new CreateMemberView();
-                        crudMember.addNewMember(createMemberView.Name, createMemberView.PersonalNumber);
-                        break;
-
-                    case 2:
-                        listMembersView = new ListMembersView();
-                        listMembersView.renderList(crudMember.Members);
-                        memberChoice = listMembersView.MemberChoice;
-                        if (memberChoice == 0)
-                        {
+                    mainView.renderMainUI();
+                    menuChoice = mainView.MenuChoice;
+                    switch (menuChoice)
+                    {
+                        case 1:
+                            createMemberView = new CreateMemberView();
+                            crudMember.addNewMember(createMemberView.Name, createMemberView.PersonalNumber);
                             break;
-                        }
-                        else
-                        {
-                            Member selectedMember = listMembersView.listAndReturnSingelMember(crudMember.Members);
-                            actionOnMemberView = new ActionOnMemberView();
-                            // actionOnMemberSwitch(actionOnMemberView.ActionChoice, selectedMember);
-                            boatView = new BoatView();
-                            if (actionOnMemberView.ActionChoice == 1)
-                            {
-                                boatView.GetBoatInformation();
-                                int boatCount = selectedMember.Boats.Count;
-                                selectedMember.Boats.Add(new Boat(boatView.BoatType, boatView.Length, boatCount + 1));
 
-                                //Should this be made into a method in the member class to increase number of boats?
-                                selectedMember.NumberOfBoats += 1;
-                            } 
-                            else if(actionOnMemberView.ActionChoice == 2)
+                        case 2:
+                            listMembersView = new ListMembersView();
+                            listMembersView.renderList(crudMember.Members);
+                            memberChoice = listMembersView.MemberChoice;
+                            if (memberChoice == 0)
                             {
-                                boatView.whichBoatToChange(selectedMember.Boats);
-                                boatView.GetBoatInformation();
-                                selectedMember.selectAndUpdateBoat(boatView.BoatChoice, boatView.BoatType, boatView.Length);
+                                break;
                             }
-                            else if(actionOnMemberView.ActionChoice == 3)
+                            else
                             {
-                                boatView.whichBoatToChange(selectedMember.Boats);
-                                selectedMember.deleteBoat(boatView.BoatChoice);
+                                Member selectedMember = listMembersView.listAndReturnSingelMember(crudMember.Members);
+                                actionOnMemberView = new ActionOnMemberView();
+                                // actionOnMemberSwitch(actionOnMemberView.ActionChoice, selectedMember);
+                                boatView = new BoatView();
+                                if (actionOnMemberView.ActionChoice == 1)
+                                {
+                                    boatView.GetBoatInformation();
+                                    int boatCount = selectedMember.Boats.Count;
+                                    selectedMember.Boats.Add(new Boat(boatView.BoatType, boatView.Length, boatCount + 1));
+
+                                    //Should this be made into a method in the member class to increase number of boats?
+                                    selectedMember.NumberOfBoats += 1;
+                                }
+                                else if (actionOnMemberView.ActionChoice == 2)
+                                {
+                                    boatView.whichBoatToChange(selectedMember.Boats);
+                                    boatView.GetBoatInformation();
+                                    selectedMember.selectAndUpdateBoat(boatView.BoatChoice, boatView.BoatType, boatView.Length);
+                                }
+                                else if (actionOnMemberView.ActionChoice == 3)
+                                {
+                                    boatView.whichBoatToChange(selectedMember.Boats);
+                                    selectedMember.deleteBoat(boatView.BoatChoice);
+                                }
+                                else if (actionOnMemberView.ActionChoice == 4)
+                                {
+                                    createMemberView = new CreateMemberView();
+                                    crudMember.updateMemberInformation(selectedMember.UniqueId, createMemberView.Name, createMemberView.PersonalNumber);
+                                }
+                                else if (actionOnMemberView.ActionChoice == 5)
+                                {
+                                    crudMember.deleteMember(selectedMember.UniqueId);
+                                }
+                                break;
                             }
+                        default:
+                            crudMember.writeToJSON();
+                            mainView.ExitMessage();
                             break;
-                        }
-                    default:
-                        crudMember.writeToJSON();
-                        mainView.ExitMessage();
-                        break;
+                    }
                 }
+            } 
+            catch (Exception ex)
+            {
+                mainView.DisplayError(ex);
+                RunApplication();
             }
+
+
         }
 
         /*private void actionOnMemberSwitch(int choice, Member selectedMember)
